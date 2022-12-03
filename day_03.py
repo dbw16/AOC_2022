@@ -1,10 +1,9 @@
+lower_scores = {chr(i): i - 96 for i in range(ord("a"), ord("z") + 1)}
+upper_scores = {s.upper(): lower_scores[s] + 26 for s in lower_scores}
+score_dict = lower_scores | upper_scores
 
 
 def part_1():
-    lower_scores = {chr(i): i - 96 for i in range(ord("a"), ord("z") + 1)}
-    upper_scores = {s.upper(): lower_scores[s] + 26 for s in lower_scores}
-    score_dict = lower_scores | upper_scores
-
     with open("day_03.txt") as f:
         lines = [[char for char in line.strip()] for line in f.readlines()]
 
@@ -18,14 +17,11 @@ def part_1():
 
     print(sum(scores))
 
+
 def part_2():
     def chunk(lst: list, n:int):
         for i in range(0, len(lst), n):
             yield lst[i:i + n]
-
-    lower_scores = {chr(i): i - 96 for i in range(ord("a"), ord("z") + 1)}
-    upper_scores = {s.upper(): lower_scores[s] + 26 for s in lower_scores}
-    score_dict = lower_scores | upper_scores
 
     with open("day_03.txt") as f:
         lines = [[char for char in line.strip()] for line in f.readlines()]
