@@ -70,6 +70,6 @@ def part_1():
     print("".join(col[-1] for col in cols if col))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # part_1()
     part_2()

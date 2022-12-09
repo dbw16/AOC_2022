@@ -7,8 +7,13 @@ def part_2() -> int:
     with open("day04.txt") as f:
         lines = (
             tuple(
-                map(lambda l: tuple(map(int, l)), map(functools.partial(str.split, sep="-"), line.strip().split(","))))
-            for line in f.readlines())
+                map(
+                    lambda l: tuple(map(int, l)),
+                    map(functools.partial(str.split, sep="-"), line.strip().split(",")),
+                )
+            )
+            for line in f.readlines()
+        )
 
     def over_lapping(a: t.Sequence, b: t.Sequence) -> bool:
         # we want a to always start before b
@@ -23,8 +28,13 @@ def part_1() -> int:
     with open("day04.txt") as f:
         lines = (
             tuple(
-                map(lambda l: tuple(map(int, l)), map(functools.partial(str.split, sep="-"), line.strip().split(","))))
-            for line in f.readlines())
+                map(
+                    lambda l: tuple(map(int, l)),
+                    map(functools.partial(str.split, sep="-"), line.strip().split(",")),
+                )
+            )
+            for line in f.readlines()
+        )
 
     count = 0
     for line in lines:
@@ -36,6 +46,6 @@ def part_1() -> int:
     return count
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(part_1())
     print(part_2())

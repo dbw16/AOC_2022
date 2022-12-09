@@ -9,7 +9,7 @@ def part_1():
 
     scores = []
     for line in lines:
-        second_half_set = set(line[int(len(line) / 2):])
+        second_half_set = set(line[int(len(line) / 2) :])
         for char in line[: int(len(line) / 2)]:
             if char in second_half_set:
                 scores.append(score_dict[char])
@@ -21,7 +21,7 @@ def part_1():
 def part_2():
     def chunk(lst: list, n: int):
         for i in range(0, len(lst), n):
-            yield lst[i: i + n]
+            yield lst[i : i + n]
 
     with open("day_03.txt") as f:
         lines = [[char for char in line.strip()] for line in f.readlines()]
@@ -36,8 +36,8 @@ def part_2():
 
 
 if __name__ == "__main__":
-    print((1,2,3) * 3)
-    for elve in zip(* ((iter([1, 2, 3, 4, 5, 6, 7, 8]),) * 3)):
+    print((1, 2, 3) * 3)
+    for elve in zip(*((iter([1, 2, 3, 4, 5, 6, 7, 8]),) * 3)):
         print(elve)
 
     for i in (iter([1, 2, 3, 4, 5, 6, 7, 8]),) * 3:
