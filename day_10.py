@@ -73,7 +73,7 @@ def part_2():
             if pixel in range(sprite_center-1, sprite_center+2):
                 print(M, end="")
             else:
-                print(".", end="")
+                print(" ", end="")
         print("")
 
 
