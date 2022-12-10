@@ -1,3 +1,6 @@
+def chat_gpg():
+    print(max([int(x.strip()) for x in open('input.txt') if x.strip() != '']))
+
 def part_1():
     with open("day1.txt") as f:
         lines = [line.strip() for line in f.readlines()]
@@ -41,4 +44,5 @@ def part_2_refactor():
 
 
 if __name__ == "__main__":
-    print(part_2_refactor())
+    chat_gpg()
+    # print(part_2_refactor())
