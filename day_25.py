@@ -1,5 +1,6 @@
-import math
 from collections import defaultdict
+from numpy import base_repr
+
 
 SNAFU_DIGITS_TO_INT: dict[str, int] = {"=": -2, "-": -1, "0": 0, "1": 1, "2": 2}
 BASE_5_TO_SNAFU_DIGITS: dict[str, tuple[str, str]] = {
@@ -14,20 +15,12 @@ BASE_5_TO_SNAFU_DIGITS: dict[str, tuple[str, str]] = {
 }
 
 
-def int_to_base_5(n: int) -> str:
-    s = ""
-    while n:
-        s = str(n % 5) + s
-        n //= 5
-    return s
-
-
 def snafu_sum(vals: list[str]) -> tuple[str, str]:
     return BASE_5_TO_SNAFU_DIGITS[str(sum((SNAFU_DIGITS_TO_INT[s] for s in vals)))]
 
 
 def int_to_snafu(base_10: int) -> str:
-    base_5: str = int_to_base_5(base_10)
+    base_5: str = base_repr(base_10, 5)
     # 124030
     # convert base 5 to snafu left to right 0->0, 3-> 5-2 -> 1=, 0->0, 4->5-1 -> 1-, 2 -> 2, 1->1 and smash em together
     place_to_vals: dict[int, list[str]] = defaultdict(list)
