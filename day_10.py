@@ -1,4 +1,5 @@
 from collections import deque
+
 M = f"\033[91m#\033[0m"
 
 
@@ -70,12 +71,12 @@ def part_2():
         for pixel in range(40):
             cycle_n = pixel + 1 + row * 40
             sprite_center = cycle_to_reg[cycle_n]
-            if pixel in range(sprite_center-1, sprite_center+2):
+            if pixel in range(sprite_center - 1, sprite_center + 2):
                 print(M, end="")
             else:
                 print(" ", end="")
         print("")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     part_2()

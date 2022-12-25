@@ -79,6 +79,5 @@ def part1():
     return sum((1 for i in itertools.chain.from_iterable(grid) if i == X))
 
 
-
 if __name__ == "__main__":
     part1()

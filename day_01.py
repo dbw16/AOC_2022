@@ -1,5 +1,6 @@
 def chat_gpg():
-    print(max([int(x.strip()) for x in open('input.txt') if x.strip() != '']))
+    print(max([int(x.strip()) for x in open("input.txt") if x.strip() != ""]))
+
 
 def part_1():
     with open("day1.txt") as f:
